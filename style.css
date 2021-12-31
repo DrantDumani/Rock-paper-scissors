@@ -23,10 +23,16 @@ header, .scoreBoard, .gameSpace, footer {
 	margin: 0 30vw;
 }
 
-header, .scoreBoard p, .gameSpace, .game-btn, footer {
+header, .scoreBoard p, .gameSpace, .game-btn, .restart-btn, footer {
 	border: 3px solid #000;
 	border-radius: 8px;
 	background-color: #fff;
+}
+
+.restart-btn {
+	font-family: inherit;
+	font-size: 24px;
+	margin: 8px 0;
 }
 
 h1, h2 {
@@ -52,15 +58,23 @@ h1, h2 {
 .game-btn > img, .currentMove {
 	height: 100px;
 	width: 100px;
-	padding: 8px;
+	padding: 12px;
 }
 
-.game-btn:hover {
+img[src=""] {
+	width: 0;
+}
+
+.game-btn:hover, .restart-btn:hover {
 	border-style: dotted;
 }
 
-.game-btn:active {
+.game-btn:active, .restart-btn:active {
 	background-color: #f5f4f4;
+}
+
+.restart-btn:disabled {
+	text-decoration: line-through;
 }
 
 p {
