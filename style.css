@@ -1,0 +1,70 @@
+body {
+	box-sizing: border-box;
+	display:  flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 32px;
+	font-family: 'Comic Neue', cursive;
+	margin: 0;
+	background-image: repeating-linear-gradient(
+		45deg,
+		#fff,
+		#fff 60px,
+		#000 60px,
+		#000 80px);
+	height: 100vh;
+}
+
+header, footer {
+	text-align: center;
+}
+
+header, .scoreBoard, .gameSpace, footer {
+	margin: 0 30vw;
+}
+
+header, .scoreBoard p, .gameSpace, .game-btn, footer {
+	border: 3px solid #000;
+	border-radius: 8px;
+	background-color: #fff;
+}
+
+h1, h2 {
+	margin: 0;
+}
+
+.gameSpace {
+	text-align: center;
+}
+
+.img-btns {
+	display: flex;
+	justify-content: center;
+	gap: 16px;
+	padding: 5px 0;
+}
+
+.scoreBoard, .move-container {
+	display: flex;
+	justify-content: space-around;
+}
+
+.game-btn > img, .currentMove {
+	height: 100px;
+	width: 100px;
+	padding: 8px;
+}
+
+.game-btn:hover {
+	border-style: dotted;
+}
+
+.game-btn:active {
+	background-color: #f5f4f4;
+}
+
+p {
+	font-size: 24px;
+	padding: 12px;
+	margin: 0;
+}
