@@ -1,2 +1,2 @@
 # Rock-paper-scissors
-RPS Website
+RPS Website made for Odin Project
