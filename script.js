@@ -22,6 +22,7 @@ function restart(){
 	scores.forEach((el) => el.textContent = "0")
 	gameText.textContent = "Begin game!"
 	chosenMoves.forEach(img => img.src = "")
+	restartBtn.disabled = true
 }
 
 restartBtn.addEventListener("click", restart)
