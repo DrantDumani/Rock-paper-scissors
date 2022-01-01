@@ -8,6 +8,8 @@ let cpuScore = scores[1]
 
 const chosenMoves = document.querySelectorAll(".currentMove")
 let humanMove = chosenMoves[0]
+
+let roundCount = document.querySelector(".round-count > span")
 let cpuMove = chosenMoves[1]
 
 let gameText = document.querySelector(".gameText")
@@ -23,13 +25,16 @@ function restart(){
 	gameText.textContent = "Begin game!"
 	chosenMoves.forEach(img => img.src = "")
 	restartBtn.disabled = true
+	roundCount.textContent = "0"
 }
 
 restartBtn.addEventListener("click", restart)
 
 function playGame(yourMove){
-	if (!gameSession) 
+	if (!gameSession) {
 		return
+	}
+	roundCount.textContent = Number(roundCount.textContent) + 1
 	humanMove.src = `assets/${yourMove}.png`
 	let cpuChosenMove = moves[Math.floor(Math.random() * 3)]
 	cpuMove.src = `assets/${cpuChosenMove}.png`
@@ -72,14 +77,27 @@ function playGame(yourMove){
 			break
 	}
 
-	if (humanScore.textContent === "5"){
-		gameText.textContent = "The game is over! Human wins!"
-		gameSession = false
-		restartBtn.disabled = false
-	}
-	else if (cpuScore.textContent === "5"){
-		gameText.textContent = "The game is over! CPU wins!"
-		gameSession = false
-		restartBtn.disabled = false
+	if (Number(roundCount) >= 5) {
+		let scoreArr = [...scores].map(span => span.textContent)
+		if (scoreArr.includes("5")){
+			gameSession = false
+			restartBtn.disabled = false
+			if (humanScore.textContent === "5"){
+				gameText.textContent += " The game is over! Human wins!"
+			}
+			else if (cpuScore.textContent === "5") {
+				gameText.textContent += " The game is over! CPU wins!"
+			}
+		}
+		// if (humanScore.textContent === "5"){
+		// 	gameText.textContent += " The game is over! Human wins!"
+		// 	gameSession = false
+		// 	restartBtn.disabled = false
+		// }
+		// else if (cpuScore.textContent === "5"){
+		// 	gameText.textContent += " The game is over! CPU wins!"
+		// 	gameSession = false
+		// 	restartBtn.disabled = false
+		// }
 	}
 }

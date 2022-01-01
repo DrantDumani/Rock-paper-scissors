@@ -43,6 +43,10 @@ h1, h2 {
 	text-align: center;
 }
 
+.gameText, .round-count {
+	padding: 6px;
+}
+
 .img-btns {
 	display: flex;
 	justify-content: center;
@@ -65,7 +69,7 @@ img[src=""] {
 	width: 0;
 }
 
-.game-btn:hover, .restart-btn:hover {
+.game-btn:hover, .restart-btn:hover, .restart-btn:disabled {
 	border-style: dotted;
 }
 
@@ -81,4 +85,24 @@ p {
 	font-size: 24px;
 	padding: 12px;
 	margin: 0;
+}
+
+@media only screen and (max-width: 768px) {
+
+	header, .scoreBoard, .gameSpace, footer {
+		margin: 0 8vw;
+	}
+
+	.game-btn > img, .currentMove {
+		height: auto;
+		width: 50px;
+		padding: 12px;
+	}
+}
+
+@media only screen and (max-height: 480px) {
+	body {
+		height: auto;
+		padding: 2em 0;
+	}
 }
