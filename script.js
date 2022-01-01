@@ -77,7 +77,7 @@ function playGame(yourMove){
 			break
 	}
 
-	if (Number(roundCount) >= 5) {
+	if (Number(roundCount.textContent) >= 0) {
 		let scoreArr = [...scores].map(span => span.textContent)
 		if (scoreArr.includes("5")){
 			gameSession = false
